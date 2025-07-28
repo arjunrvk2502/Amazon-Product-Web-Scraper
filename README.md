@@ -36,11 +36,6 @@ numpy — for handling missing data
 
 time, random — for delays and user-agent rotation
 
-📁 Project Structure
-License 
-README.md               # Project documentation
-web_scrapping.py        # Main script
-output.csv              # Auto-generated file (based on the searched product)
 
 🚀 How to Run
 Install dependencies
