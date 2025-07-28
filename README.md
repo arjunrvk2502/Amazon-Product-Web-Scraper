@@ -1,83 +1,86 @@
-# Amazon-Product-Web-Scraper
-This is a Python-based web scraping project that extracts product information from Amazon.in. Given a product name, it fetches data like title, price, ratings, reviews, discounts, and availability, and saves the results to a CSV file.
-📌 Features
-Scrapes live product data from Amazon.in
+# 🛒 Amazon Product Web Scraper
 
-Extracts key product attributes:
+This is a Python-based web scraping project that extracts product information from **Amazon.in**. Given a product name, it fetches data like **title, price, ratings, reviews, discounts, and availability**, and saves the results to a CSV file.
 
-Title
+---
 
-Price
+## 📌 Features
 
-Ratings
+- 🔍 Scrapes live product data from Amazon.in
+- 📦 Extracts key product attributes:
+  - **Title**
+  - **Price**
+  - **Ratings**
+  - **Number of Reviews**
+  - **MRP (Original Price)**
+  - **Discount Percentage**
+  - **Availability**
+- 🔄 Random User-Agent rotation to avoid blocking
+- 🧠 Handles HTTP 503 retry logic
+- 📁 Stores output in **CSV format** for easy analysis
 
-Number of Reviews
+---
 
-MRP (Original Price)
+## 🛠️ Technologies Used
 
-Discount Percentage
+- `requests` — for sending HTTP requests  
+- `BeautifulSoup (bs4)` — for parsing HTML content  
+- `pandas` — for structuring and saving the data  
+- `numpy` — for handling missing data  
+- `time`, `random` — for delays and user-agent rotation
 
-Availability
+---
 
-Random User-Agent rotation to avoid blocking
+## 🚀 How to Run
 
-Handles HTTP 503 retry logic
+### 1. Install Dependencies
+Make sure you have Python 3.x installed. Then run:
 
-Stores output in CSV format for easy analysis
-
-🛠️ Technologies Used
-requests — for sending HTTP requests
-
-BeautifulSoup (bs4) — for parsing HTML content
-
-pandas — for structuring and saving the data
-
-numpy — for handling missing data
-
-time, random — for delays and user-agent rotation
-
-
-🚀 How to Run
-Install dependencies
-Make sure you have Python 3.x installed. Then install the required libraries:
+```
 pip install requests beautifulsoup4 pandas numpy
+```
 
-Run the script
+### 2. Run the Script
+
 python web_scrapping.py
 
-Input the product
-You'll be prompted to enter the product name you want to search for. Example:
+### 3. Input the Product
+You’ll be prompted to enter a product name:
+
 Enter the product you need to scrap from amazon : headphones
 
-Output
-A CSV file named headphones.csv will be saved on your desktop containing the scraped data.
+### 4. Output
+A CSV file named headphones.csv will be saved on your desktop with the extracted data.
 
-🧠 How It Works
-Constructs the Amazon search URL from user input.
+---
 
-Sends a GET request with a randomly chosen User-Agent header.
+## 🧠 How It Works
 
-Parses the search results page to extract links for individual product pages.
+1. Constructs the Amazon search URL from user input.  
+2. Sends a GET request with a **random User-Agent**.  
+3. Parses the search results page to extract product links.  
+4. Visits each product link to fetch detailed info.  
+5. Stores all data in a dictionary.  
+6. Converts the dictionary into a Pandas DataFrame.  
+7. Cleans the data and saves it to a CSV file.
 
-Visits each product link to fetch detailed info.
+---
 
-Appends all data to a dictionary.
+## ⚠️ Important Notes
 
-Converts the dictionary to a Pandas DataFrame.
+- ❗ This scraper is intended for **educational purposes only**.
+- 🔁 The code targets the HTML structure of **Amazon.in**, which may change over time. If it stops working, update the HTML classes or tag selectors.
+- 🛡️ Use delays (`time.sleep`) and rotate User-Agents to reduce the risk of getting blocked or banned.
 
-Cleans and saves the final output as a CSV.
+---
 
-⚠️ Important Notes
-This scraper is designed for educational purposes only. Scraping Amazon may violate their Terms of Service.
+## 👨‍💻 Author
 
-It targets the structure of Amazon.in, which is subject to change. If it stops working, HTML classes or tags might need updates.
+**Arjun R.V.**  
+📬 [LinkedIn Profile](https://www.linkedin.com/in/arjun-vijayakumar-a5609932a)
 
-Use delays (time.sleep) and rotate User-Agents to reduce the risk of IP bans.
+---
 
-👨‍💻 Author
-Arjun R.V.
-📬 www.linkedin.com/in/arjun-vijayakumar-a5609932a
+## 📜 License
 
-📜 License
-This project is licensed under the MIT License.
-
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
